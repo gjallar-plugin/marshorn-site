@@ -303,11 +303,15 @@ p { margin: 0 0 16px; color: var(--text-muted); }
 .team-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .team-card { text-align: left; }
 .avatar {
-  width: 56px;
-  height: 56px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), #7cc4ff);
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
   margin-bottom: 16px;
+  border: 2px solid rgba(79, 157, 255, 0.35);
+  background: var(--surface-border);
 }
 .team-role {
   color: var(--accent);
