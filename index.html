@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gjallar — Reproducible AI Security Evaluation | Marshorn Technologies</title>
+<meta name="description" content="Gjallar, by Marshorn Technologies Co., Ltd., is an AI-native adversarial evaluation platform: autonomous attacker and defender agents are tested against isolated, ground-truth lab environments to produce reproducible, quantitative security results." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230b0f19%22/><path d=%22M50 15 L78 30 V62 C78 78 66 88 50 92 C34 88 22 78 22 62 V30 Z%22 fill=%22none%22 stroke=%22%234f9dff%22 stroke-width=%224%22/><circle cx=%2250%22 cy=%2250%22 r=%228%22 fill=%22%234f9dff%22/></svg>" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Gjallar</span>
+      <span class="brand-suffix">by Marshorn Technologies</span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#platform">Platform</a>
+      <a href="#governance">Governance</a>
+      <a href="#technology">Technology</a>
+      <a href="#use-cases">Use Cases</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#team">Team</a>
+      <a href="#contact" class="btn btn-primary btn-sm">Contact Us</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">Reproducible AI Security Evaluation</p>
+      <h1>Ground-truth adversarial testing for autonomous security agents.</h1>
+      <p class="hero-lede">
+        Gjallar pits AI attacker and defender agents against isolated, versioned
+        lab environments — starting from a frozen Linux enterprise-slice baseline
+        and expanding into Windows Active Directory fixtures — and scores outcomes
+        against independent oracles, not self-reported success. Every episode is
+        replayable; every result is quantified.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Request a briefing</a>
+        <a class="btn btn-ghost" href="#platform">See how it works</a>
+      </div>
+      <dl class="hero-stats">
+        <div><dt>Fixture-versioned</dt><dd>episodes, frozen baselines</dd></div>
+        <div><dt>Zero-egress</dt><dd>isolated QEMU lab networks</dd></div>
+        <div><dt>Independent</dt><dd>ground-truth oracles, not LLM self-grading</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="platform">
+    <div class="container">
+      <p class="eyebrow">The Platform</p>
+      <h2>Security evaluation that behaves like a lab, not a demo.</h2>
+      <p class="section-lede">
+        Most agentic security benchmarks rely on transcripts and self-reported
+        outcomes. Gjallar instead runs full episodes inside isolated virtual
+        environments with independently observable state, so a claimed
+        compromise, detection, or containment can be verified against the
+        environment itself.
+      </p>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Dual-agent episodes</h3>
+          <p>
+            An attacker agent and a defender agent act independently inside the
+            same environment. Neither sees the other's reasoning — only what its
+            own sensors and sight channels expose, mirroring real red-team /
+            blue-team separation.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Ground-truth oracles</h3>
+          <p>
+            Success is measured by independent, environment-level checks — a
+            domain object modified, a service ticket issued, a file read —
+            never by asking a model whether it thinks it succeeded.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Replayable fixtures</h3>
+          <p>
+            Every scenario is versioned and hashed. The same fixture digest
+            reproduces the same topology and starting state, enabling apples-
+            to-apples comparisons across models, prompts, and defenses.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="governance">
+    <div class="container">
+      <p class="eyebrow">Prior work &amp; governance</p>
+      <h2>From agent-side policy control to measurable adversarial evaluation.</h2>
+      <p class="section-lede">
+        Gjallar began as agent-side security governance work shown at
+        <strong>OpenAI Build Week</strong> — the Gjallar Plugin companion
+        surface for intercepting and governing agent actions. This evaluation
+        platform extends that line: autonomous attacker and defender agents
+        are tested in isolated labs so policy candidates can be measured
+        before human promotion, rather than trusted on self-reported success.
+      </p>
+      <div class="lineage">
+        <div class="lineage-item">
+          <h3>Gjallar Plugin</h3>
+          <p class="lineage-tag">Prior work · OpenAI Build Week</p>
+          <p>
+            An agent-execution governance surface: observe, constrain, and
+            route sensitive actions through human-approved policy controls.
+          </p>
+        </div>
+        <div class="lineage-arrow" aria-hidden="true">→</div>
+        <div class="lineage-item">
+          <h3>Gjallar Evaluation</h3>
+          <p class="lineage-tag">Current focus · this platform</p>
+          <p>
+            Reproducible dual-agent episodes, ground-truth oracles, and
+            fixture-versioned labs that quantify whether those controls hold
+            under adversarial pressure.
+          </p>
+        </div>
+      </div>
+      <p class="team-note">
+        The plugin marketplace repo and this evaluation engine remain separate
+        codebases. Together they describe one product thesis: govern agents at
+        the action boundary, and prove that governance with lab-grounded
+        evidence.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="technology">
+    <div class="container">
+      <p class="eyebrow">Technology</p>
+      <h2>Built on real virtualization, not simulated transcripts.</h2>
+      <div class="grid grid-2 tech-grid">
+        <div class="tech-item">
+          <h3>Isolated QEMU labs</h3>
+          <p>
+            Multi-VM topologies run under QEMU with no public network egress.
+            The shipped path is a Linux enterprise-slice fixture; the active
+            build path is a three-node Windows AD lab (domain controller,
+            member server, workstation) driven by a WinRM control plane.
+          </p>
+        </div>
+        <div class="tech-item">
+          <h3>Chain-of-node objectives</h3>
+          <p>
+            Attacker goals are modeled as ordered technique chains — for
+            example domain authentication → resource access → service ticket
+            acquisition → remote session → object control — so partial
+            progress and technique-specific failure are both observable.
+          </p>
+        </div>
+        <div class="tech-item">
+          <h3>Frozen baselines</h3>
+          <p>
+            Once a scenario is validated across repeated runs, its baseline is
+            frozen and versioned. New attacker or defender strategies are
+            regression-tested against that frozen baseline before any claim of
+            improvement is accepted.
+          </p>
+        </div>
+        <div class="tech-item">
+          <h3>Human-gated policy synthesis</h3>
+          <p>
+            Findings from the attack loop can draft defensive policy
+            candidates, but nothing is auto-enabled. Every candidate goes
+            through an explicit, human-approved promotion gate before it can
+            affect a live governance surface — the same discipline as the
+            Gjallar Plugin action boundary.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="use-cases">
+    <div class="container">
+      <p class="eyebrow">Use Cases</p>
+      <h2>Who this is for.</h2>
+      <div class="grid grid-3">
+        <div class="card card-outline">
+          <h3>Agent security governance</h3>
+          <p>Measure whether action-boundary policies and human promotion gates hold when autonomous agents are pressured by an independent attacker loop.</p>
+        </div>
+        <div class="card card-outline">
+          <h3>Security product teams</h3>
+          <p>Benchmark detection and containment logic against reproducible attack chains before shipping a new rule set or model update.</p>
+        </div>
+        <div class="card card-outline">
+          <h3>AI safety &amp; agentic research</h3>
+          <p>Study how autonomous LLM agents behave under adversarial pressure in bounded, observable, and fully replayable environments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="roadmap">
+    <div class="container">
+      <p class="eyebrow">Roadmap</p>
+      <h2>Current scope, next milestones, and where we are investing.</h2>
+      <ol class="roadmap">
+        <li>
+          <span class="roadmap-phase">Phase 1 — Shipped</span>
+          <h3>Linux enterprise-slice baseline</h3>
+          <p>Frozen, reproducible Linux fixture with chain-of-node oracles and regression-tested attacker/defender baselines. This is the evaluation path we can run today.</p>
+        </li>
+        <li>
+          <span class="roadmap-phase">Phase 2 — In progress</span>
+          <h3>Windows Active Directory fixture</h3>
+          <p>Three-VM AD lab under construction: OS images and WinRM control plane first, then domain join, identity chain, and oracle coverage for authentication, resource access, service tickets, remote sessions, and domain object control.</p>
+        </li>
+        <li>
+          <span class="roadmap-phase">Phase 3 — Planned</span>
+          <h3>AV / EDR telemetry parity</h3>
+          <p>Independent endpoint sensor contracts (process, memory, file, network, identity) so detection quality is measured on telemetry, not vendor alerts alone.</p>
+        </li>
+        <li>
+          <span class="roadmap-phase">Phase 4 — Planned</span>
+          <h3>GPU-accelerated local evaluation at scale</h3>
+          <p>Batch, locally-hosted model evaluation across fixtures for faster iteration and lower per-episode cost. This is the primary infrastructure investment we are seeking through startup and research partnerships.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="team">
+    <div class="container">
+      <p class="eyebrow">Team</p>
+      <h2>Founder-led research, with explicit constraints.</h2>
+      <div class="grid grid-3 team-grid">
+        <div class="card team-card">
+          <div class="avatar" aria-hidden="true"></div>
+          <h3>Scott Fang</h3>
+          <p class="team-role">Founder &amp; Lead Researcher</p>
+          <p>
+            Marshorn is currently a one-person company. Scott designs the
+            fixture, oracle, and agent architecture and is concentrating the
+            available research capacity on post-compromise Windows Active
+            Directory attack paths.
+          </p>
+        </div>
+      </div>
+      <div class="constraints">
+        <div class="constraint-item">
+          <p class="constraint-label">Infrastructure constraint</p>
+          <h3>Evaluation scale is funding-limited</h3>
+          <p>
+            Current work runs on constrained local hardware. Available memory,
+            accelerated virtualization, and GPU capacity limit the number and
+            speed of concurrent multi-VM and local-model experiments. Funding
+            would be directed first to reproducible compute infrastructure, not
+            premature production expansion.
+          </p>
+        </div>
+        <div class="constraint-item">
+          <p class="constraint-label">Team constraint</p>
+          <h3>Web pre-compromise coverage is not staffed yet</h3>
+          <p>
+            The present research focus is post-compromise AD evaluation.
+            Pre-compromise web application research — both white-box and
+            black-box — requires scarce specialist expertise that the company
+            cannot yet fund. That track remains intentionally out of current
+            scope until the right security researcher can be supported.
+          </p>
+        </div>
+      </div>
+      <p class="team-note">
+        We are seeking infrastructure support and focused collaboration with
+        researchers experienced in web application security, adversarial
+        evaluation, or applied ML. These constraints define the current scope;
+        they are not represented as completed capabilities.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container contact-grid">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Let's talk about reproducible security evaluation.</h2>
+        <p class="section-lede">
+          Whether you're evaluating Gjallar for a research partnership, a
+          startup program, infrastructure support, or a specialist web
+          security collaboration, we'd like to hear from you.
+        </p>
+      </div>
+      <div class="contact-card">
+        <p><strong>Email</strong><br/>
+          <a href="mailto:scott.fang@marshorn.com">scott.fang@marshorn.com</a>
+        </p>
+        <p><strong>Legal Entity</strong><br/>Marshorn Technologies Co., Ltd.</p>
+        <p><strong>Product</strong><br/>Gjallar — AI-native adversarial security evaluation</p>
+        <p><strong>Stage</strong><br/>Pre-seed, single-founder. Linux baseline shipped; post-compromise Windows AD fixture in progress.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>&copy; <span id="year"></span> Marshorn Technologies Co., Ltd. All rights reserved. Gjallar is a product of Marshorn Technologies Co., Ltd.</span>
+    <span class="footer-note">Lab-only environments. No production credentials or live payloads are used in evaluation.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
