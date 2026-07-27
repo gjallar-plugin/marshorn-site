@@ -18,13 +18,13 @@
       <span class="brand-suffix">by Marshorn Technologies</span>
     </a>
     <nav class="nav-links" id="nav-links">
+      <a href="#evidence">Evidence</a>
       <a href="#platform">Platform</a>
-      <a href="#governance">Governance</a>
-      <a href="#technology">Technology</a>
-      <a href="#use-cases">Use Cases</a>
-      <a href="#roadmap">Roadmap</a>
+      <a href="#product">Product</a>
+      <a href="#difference">Difference</a>
+      <a href="#milestones">Milestones</a>
       <a href="#team">Team</a>
-      <a href="#contact" class="btn btn-primary btn-sm">Contact Us</a>
+      <a href="#contact" class="btn btn-primary btn-sm">Design partnership</a>
     </nav>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -36,28 +36,78 @@
 
   <section class="hero">
     <div class="container hero-inner">
-      <p class="eyebrow">Reproducible AI Security Evaluation</p>
-      <h1>Ground-truth adversarial testing for autonomous security agents.</h1>
+      <p class="eyebrow">Early research platform · Pre-seed</p>
+      <h1>Prove agent security controls against ground truth.</h1>
       <p class="hero-lede">
-        Gjallar pits AI attacker and defender agents against isolated, versioned
-        lab environments — starting from a frozen Linux enterprise-slice baseline
-        and expanding into Windows Active Directory fixtures — and scores outcomes
-        against independent oracles, not self-reported success. Every episode is
-        replayable; every result is quantified.
+        Gjallar runs attacker and defender agents inside isolated, versioned
+        environments and verifies outcomes with environment-level oracles—not
+        model self-reporting. The Linux baseline is operational; the Windows
+        Active Directory fixture and first public multi-model report are in progress.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#contact">Request a briefing</a>
-        <a class="btn btn-ghost" href="#platform">See how it works</a>
+        <a class="btn btn-primary" href="#contact">Explore a research pilot</a>
+        <a class="btn btn-ghost" href="#evidence">Review current evidence</a>
       </div>
       <dl class="hero-stats">
-        <div><dt>Fixture-versioned</dt><dd>episodes, frozen baselines</dd></div>
-        <div><dt>Zero-egress</dt><dd>isolated QEMU lab networks</dd></div>
-        <div><dt>Independent</dt><dd>ground-truth oracles, not LLM self-grading</dd></div>
+        <div><dt>Operational</dt><dd>Linux enterprise-slice baseline</dd></div>
+        <div><dt>In progress</dt><dd>three-node Windows AD fixture</dd></div>
+        <div><dt>Not yet published</dt><dd>cross-model comparative results</dd></div>
       </dl>
     </div>
   </section>
 
-  <section class="section" id="platform">
+  <section class="section" id="evidence">
+    <div class="container">
+      <p class="eyebrow">Evidence status</p>
+      <h2>What is verified today—and what is not.</h2>
+      <p class="section-lede">
+        Gjallar's product claim is verifiability, so this page separates
+        operational artifacts from results that are still being prepared.
+        We do not publish comparative performance claims before repeated,
+        oracle-confirmed runs are complete.
+      </p>
+      <div class="evidence-panel">
+        <div class="evidence-summary">
+          <span class="status-badge status-operational">Operational internally</span>
+          <h3>Frozen Linux enterprise-slice baseline</h3>
+          <p>
+            A versioned Linux fixture, ordered chain-of-node objectives,
+            attacker/defender episode execution, independent write-effect
+            checks, snapshots, and replay-oriented artifacts are implemented.
+          </p>
+        </div>
+        <dl class="evidence-facts">
+          <div><dt>Public comparison</dt><dd>In preparation</dd></div>
+          <div><dt>External validation</dt><dd>Not yet completed</dd></div>
+          <div><dt>Windows AD baseline</dt><dd>Control plane in progress</dd></div>
+        </dl>
+      </div>
+      <div class="grid grid-3 evidence-schema">
+        <div class="card">
+          <p class="card-kicker">Report field 01</p>
+          <h3>Fixture digest</h3>
+          <p>Every published result will identify the exact topology and frozen starting state.</p>
+        </div>
+        <div class="card">
+          <p class="card-kicker">Report field 02</p>
+          <h3>Oracle-confirmed completion</h3>
+          <p>Technique-chain progress will be measured from environment state, not agent narration.</p>
+        </div>
+        <div class="card">
+          <p class="card-kicker">Report field 03</p>
+          <h3>Repeated-run variance</h3>
+          <p>Model comparisons will include repeated episodes and variation, not a single best run.</p>
+        </div>
+      </div>
+      <p class="disclosure">
+        <strong>Current disclosure:</strong> no three-model comparison, public
+        preprint, or external pilot result is available yet. Publishing that
+        evidence is the next research milestone.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="platform">
     <div class="container">
       <p class="eyebrow">The Platform</p>
       <h2>Security evaluation that behaves like a lab, not a demo.</h2>
@@ -99,48 +149,67 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="governance">
+  <section class="section" id="product">
     <div class="container">
-      <p class="eyebrow">Prior work &amp; governance</p>
-      <h2>From agent-side policy control to measurable adversarial evaluation.</h2>
+      <p class="eyebrow">Product model</p>
+      <h2>Evaluate → synthesize → govern.</h2>
       <p class="section-lede">
-        Gjallar began as agent-side security governance work shown at
-        <strong>OpenAI Build Week</strong> — the Gjallar Plugin companion
-        surface for intercepting and governing agent actions. This evaluation
-        platform extends that line: autonomous attacker and defender agents
-        are tested in isolated labs so policy candidates can be measured
-        before human promotion, rather than trusted on self-reported success.
+        The evaluation benchmark is the evidence layer, not the entire
+        business. Gjallar connects reproducible adversarial testing to
+        human-gated policy control at the agent action boundary.
       </p>
-      <div class="lineage">
+      <div class="product-flow">
         <div class="lineage-item">
-          <h3>Gjallar Plugin</h3>
-          <p class="lineage-tag">Prior work · OpenAI Build Week</p>
+          <span class="flow-step">01</span>
+          <h3>Evaluate</h3>
+          <p class="lineage-tag">Evidence layer</p>
           <p>
-            An agent-execution governance surface: observe, constrain, and
-            route sensitive actions through human-approved policy controls.
+            Run attacker and defender agents against a frozen fixture and
+            measure the result with independent environment-level oracles.
           </p>
         </div>
         <div class="lineage-arrow" aria-hidden="true">→</div>
         <div class="lineage-item">
-          <h3>Gjallar Evaluation</h3>
-          <p class="lineage-tag">Current focus · this platform</p>
+          <span class="flow-step">02</span>
+          <h3>Synthesize</h3>
+          <p class="lineage-tag">Candidate policy layer</p>
           <p>
-            Reproducible dual-agent episodes, ground-truth oracles, and
-            fixture-versioned labs that quantify whether those controls hold
-            under adversarial pressure.
+            Convert verified misses into defensive policy candidates. Nothing
+            is promoted automatically.
+          </p>
+        </div>
+        <div class="lineage-arrow" aria-hidden="true">→</div>
+        <div class="lineage-item">
+          <span class="flow-step">03</span>
+          <h3>Govern</h3>
+          <p class="lineage-tag">Operational layer</p>
+          <p>
+            Apply human-approved controls at the agent action boundary through
+            the companion Gjallar Plugin governance surface.
           </p>
         </div>
       </div>
-      <p class="team-note">
-        The plugin marketplace repo and this evaluation engine remain separate
-        codebases. Together they describe one product thesis: govern agents at
-        the action boundary, and prove that governance with lab-grounded
-        evidence.
+      <div class="business-model">
+        <div>
+          <p class="card-kicker">Current engagement</p>
+          <h3>Scoped research pilots &amp; design partnerships</h3>
+          <p>Early partners help validate fixtures, reporting needs, and governance integration.</p>
+        </div>
+        <div>
+          <p class="card-kicker">Planned delivery</p>
+          <h3>Private evaluation and on-prem governance</h3>
+          <p>Selected methodology can remain public while private fixtures, policy integration, and sensitive deployment stay customer-controlled.</p>
+        </div>
+      </div>
+      <p class="provenance-note">
+        Gjallar Plugin was developed as a project during OpenAI Build Week.
+        This describes project provenance, not OpenAI endorsement. The plugin
+        and evaluation engine remain separate codebases within one product thesis.
       </p>
     </div>
   </section>
 
-  <section class="section" id="technology">
+  <section class="section section-alt" id="technology">
     <div class="container">
       <p class="eyebrow">Technology</p>
       <h2>Built on real virtualization, not simulated transcripts.</h2>
@@ -186,60 +255,86 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="use-cases">
+  <section class="section" id="difference">
     <div class="container">
-      <p class="eyebrow">Use Cases</p>
-      <h2>Who this is for.</h2>
-      <div class="grid grid-3">
-        <div class="card card-outline">
-          <h3>Agent security governance</h3>
-          <p>Measure whether action-boundary policies and human promotion gates hold when autonomous agents are pressured by an independent attacker loop.</p>
+      <p class="eyebrow">Differentiation</p>
+      <h2>A different layer from autonomous pentesting.</h2>
+      <p class="section-lede">
+        Established autonomous pentesting products optimize for finding and
+        validating vulnerabilities. Public benchmarks optimize for comparing
+        model capability. Gjallar asks a narrower governance question: do
+        agent controls still hold under reproducible adversarial pressure?
+      </p>
+      <div class="grid grid-3 comparison-grid">
+        <div class="card comparison-card">
+          <p class="card-kicker">Autonomous pentesting</p>
+          <h3>Find exploitable paths</h3>
+          <p>Broad discovery and operational validation are the product. Gjallar does not claim broader coverage than established platforms in this category.</p>
         </div>
-        <div class="card card-outline">
-          <h3>Security product teams</h3>
-          <p>Benchmark detection and containment logic against reproducible attack chains before shipping a new rule set or model update.</p>
+        <div class="card comparison-card">
+          <p class="card-kicker">Capability benchmarks</p>
+          <h3>Compare model performance</h3>
+          <p>Standardized tasks produce useful rankings, often as public goods. They do not necessarily connect failures to an operational policy surface.</p>
         </div>
-        <div class="card card-outline">
-          <h3>AI safety &amp; agentic research</h3>
-          <p>Study how autonomous LLM agents behave under adversarial pressure in bounded, observable, and fully replayable environments.</p>
+        <div class="card comparison-card comparison-focus">
+          <p class="card-kicker">Gjallar</p>
+          <h3>Test and improve governance</h3>
+          <p>Fixture-versioned episodes expose policy gaps; independent oracles verify them; human-approved candidates can return to the governance boundary.</p>
         </div>
       </div>
+      <p class="disclosure">
+        <strong>Defensibility thesis:</strong> the moat is not a fixture file
+        alone. It is the accumulated mapping between replayable environments,
+        verified failure modes, policy candidates, and customer-specific
+        governance integration. This thesis still requires external validation.
+      </p>
     </div>
   </section>
 
-  <section class="section" id="roadmap">
+  <section class="section section-alt" id="milestones">
     <div class="container">
-      <p class="eyebrow">Roadmap</p>
-      <h2>Current scope, next milestones, and where we are investing.</h2>
+      <p class="eyebrow">Next six months</p>
+      <h2>Three milestones that convert the thesis into evidence.</h2>
       <ol class="roadmap">
         <li>
-          <span class="roadmap-phase">Phase 1 — Shipped</span>
-          <h3>Linux enterprise-slice baseline</h3>
-          <p>Frozen, reproducible Linux fixture with chain-of-node oracles and regression-tested attacker/defender baselines. This is the evaluation path we can run today.</p>
+          <span class="roadmap-phase">Milestone 01 · Public evidence</span>
+          <h3>Release the first multi-model technical report</h3>
+          <p>Evaluate at least three models on the same frozen Linux baseline, repeat each condition, and publish fixture digest, oracle-confirmed chain completion, and run-to-run variance.</p>
         </li>
         <li>
-          <span class="roadmap-phase">Phase 2 — In progress</span>
-          <h3>Windows Active Directory fixture</h3>
-          <p>Three-VM AD lab under construction: OS images and WinRM control plane first, then domain join, identity chain, and oracle coverage for authentication, resource access, service tickets, remote sessions, and domain object control.</p>
+          <span class="roadmap-phase">Milestone 02 · Coverage</span>
+          <h3>Freeze a reproducible Windows AD baseline</h3>
+          <p>Complete domain join, identity-chain actions, ground-truth oracle coverage, snapshot recovery, and repeated validation across the domain controller, member server, and workstation.</p>
         </li>
         <li>
-          <span class="roadmap-phase">Phase 3 — Planned</span>
-          <h3>AV / EDR telemetry parity</h3>
-          <p>Independent endpoint sensor contracts (process, memory, file, network, identity) so detection quality is measured on telemetry, not vendor alerts alone.</p>
-        </li>
-        <li>
-          <span class="roadmap-phase">Phase 4 — Planned</span>
-          <h3>GPU-accelerated local evaluation at scale</h3>
-          <p>Batch, locally-hosted model evaluation across fixtures for faster iteration and lower per-episode cost. This is the primary infrastructure investment we are seeking through startup and research partnerships.</p>
+          <span class="roadmap-phase">Milestone 03 · External validation</span>
+          <h3>Add one design partner and one research collaborator</h3>
+          <p>Secure a scoped pilot or research MOU and add specialist capacity—initially through a part-time or collaborating researcher—to reduce single-founder execution risk.</p>
         </li>
       </ol>
+      <div class="resource-plan">
+        <div>
+          <p class="card-kicker">Near-term resource priority</p>
+          <h3>Inference, memory, virtualization, replay</h3>
+          <p>Cloud/API model access, a higher-memory virtualization host, snapshot storage, and automated batch replay come before dedicated GPU ownership.</p>
+        </div>
+        <div>
+          <p class="card-kicker">Deferred until justified</p>
+          <h3>Owned local GPU capacity</h3>
+          <p>Local accelerators will be considered only after measured workload utilization and cloud spend demonstrate that ownership is the better allocation.</p>
+        </div>
+      </div>
+      <p class="future-note">
+        <strong>Future research, not a six-month commitment:</strong> AV/EDR
+        telemetry parity and pre-compromise web white-box/black-box evaluation.
+      </p>
     </div>
   </section>
 
-  <section class="section section-alt" id="team">
+  <section class="section" id="team">
     <div class="container">
       <p class="eyebrow">Team</p>
-      <h2>Founder-led research, with explicit constraints.</h2>
+      <h2>Single-founder execution, with a focused expansion plan.</h2>
       <div class="grid grid-3 team-grid">
         <div class="card team-card">
           <img class="avatar" src="img/IMG_2160.JPG" alt="Scott Fang, Founder of Marshorn Technologies" width="96" height="96" />
@@ -247,54 +342,50 @@
           <p class="team-role">Founder &amp; Lead Researcher</p>
           <p>
             Marshorn is currently a one-person company. Scott designs the
-            fixture, oracle, and agent architecture and is concentrating the
-            available research capacity on post-compromise Windows Active
-            Directory attack paths.
+            fixture, oracle, and agent architecture, with current research
+            concentrated on post-compromise Windows Active Directory paths.
           </p>
         </div>
       </div>
       <div class="constraints">
         <div class="constraint-item">
-          <p class="constraint-label">Infrastructure constraint</p>
-          <h3>Evaluation scale is funding-limited</h3>
+          <p class="constraint-label">Execution constraint</p>
+          <h3>Repeated evaluation is capacity-limited</h3>
           <p>
-            Current work runs on constrained local hardware. Available memory,
-            accelerated virtualization, and GPU capacity limit the number and
-            speed of concurrent multi-VM and local-model experiments. Funding
-            would be directed first to reproducible compute infrastructure, not
-            premature production expansion.
+            Current local hardware limits concurrent multi-VM experiments.
+            Near-term support will fund inference, memory, accelerated
+            virtualization, snapshot storage, and automated replay.
           </p>
         </div>
         <div class="constraint-item">
           <p class="constraint-label">Team constraint</p>
-          <h3>Web pre-compromise coverage is not staffed yet</h3>
+          <h3>Web pre-compromise research is out of scope today</h3>
           <p>
             The present research focus is post-compromise AD evaluation.
             Pre-compromise web application research — both white-box and
-            black-box — requires scarce specialist expertise that the company
-            cannot yet fund. That track remains intentionally out of current
-            scope until the right security researcher can be supported.
+            black-box — requires specialist expertise not present on the team.
+            It remains intentionally deferred until a qualified collaborator
+            or researcher can be supported.
           </p>
         </div>
       </div>
       <p class="team-note">
-        We are seeking infrastructure support and focused collaboration with
-        researchers experienced in web application security, adversarial
-        evaluation, or applied ML. These constraints define the current scope;
-        they are not represented as completed capabilities.
+        The immediate team milestone is one part-time or collaborating
+        researcher. The priority is reducing single-founder risk while keeping
+        commitments limited to capabilities that can be verified.
       </p>
     </div>
   </section>
 
-  <section class="section" id="contact">
+  <section class="section section-alt" id="contact">
     <div class="container contact-grid">
       <div>
         <p class="eyebrow">Contact</p>
-        <h2>Let's talk about reproducible security evaluation.</h2>
+        <h2>Become an early design or research partner.</h2>
         <p class="section-lede">
-          Whether you're evaluating Gjallar for a research partnership, a
-          startup program, infrastructure support, or a specialist web
-          security collaboration, we'd like to hear from you.
+          We are looking for one security product or research team for a
+          scoped pilot, infrastructure support for repeatable multi-VM
+          evaluation, and a specialist collaborator in web application security.
         </p>
       </div>
       <div class="contact-card">
@@ -303,7 +394,8 @@
         </p>
         <p><strong>Legal Entity</strong><br/>Marshorn Technologies Co., Ltd.</p>
         <p><strong>Product</strong><br/>Gjallar — AI-native adversarial security evaluation</p>
-        <p><strong>Stage</strong><br/>Pre-seed, single-founder. Linux baseline shipped; post-compromise Windows AD fixture in progress.</p>
+        <p><strong>Current offer</strong><br/>Scoped research pilots and design partnerships</p>
+        <p><strong>Stage</strong><br/>Pre-seed, single-founder. Linux baseline operational; public comparison and Windows AD fixture in progress.</p>
       </div>
     </div>
   </section>
