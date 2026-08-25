@@ -19,11 +19,13 @@ once DNS is configured).
    "Legal Entity" field, and the footer) if the registered name changes.
 2. **Contact email** — currently `scott.fang@marshorn.com` in `index.html`.
    Keep this on the `marshorn.com` domain for startup-program applications.
-3. **Domain** — apex domain is `marshorn.com` (see `CNAME` in this folder).
+3. **Founder profiles** — Team card links to
+   [github.com/Scottman625](https://github.com/Scottman625) and
+   [LinkedIn](https://www.linkedin.com/in/scottfang6a6965753951).
+4. **Domain** — apex domain is `marshorn.com` (see `CNAME` in this folder).
    Configure DNS as described below under GitHub Pages.
-4. **Team / stage copy** — Team and Contact cards already describe a lean
-   founding team and pre-seed stage via roadmap language (shipped / in
-   progress / planned). Update if hiring status or milestones change.
+5. **Team / stage copy** — Company, Product stage, Evidence, and Team sections
+   should stay aligned with what is actually frozen vs still unpublished.
 
 ## Deploy: GitHub Pages + marshorn.com
 

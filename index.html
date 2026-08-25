@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Gjallar — Reproducible AI Security Evaluation | Marshorn Technologies</title>
-<meta name="description" content="Gjallar, by Marshorn Technologies Co., Ltd., is an AI-native adversarial evaluation platform: autonomous attacker and defender agents are tested against isolated, ground-truth lab environments to produce reproducible, quantitative security results." />
+<meta name="description" content="Marshorn Technologies builds Gjallar, a research MVP that evaluates AI attacker and defender agents in isolated labs with independent oracles—so security claims can be reproduced, not self-reported. For security product, agent-governance, and research teams." />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230b0f19%22/><path d=%22M50 15 L78 30 V62 C78 78 66 88 50 92 C34 88 22 78 22 62 V30 Z%22 fill=%22none%22 stroke=%22%234f9dff%22 stroke-width=%224%22/><circle cx=%2250%22 cy=%2250%22 r=%228%22 fill=%22%234f9dff%22/></svg>" />
 <link rel="stylesheet" href="styles.css" />
 </head>
@@ -18,8 +18,8 @@
       <span class="brand-suffix">by Marshorn Technologies</span>
     </a>
     <nav class="nav-links" id="nav-links">
+      <a href="#company">Company</a>
       <a href="#evidence">Evidence</a>
-      <a href="#platform">Platform</a>
       <a href="#product">Product</a>
       <a href="#difference">Difference</a>
       <a href="#milestones">Milestones</a>
@@ -36,27 +36,72 @@
 
   <section class="hero">
     <div class="container hero-inner">
-      <p class="eyebrow">Early research platform · Pre-seed</p>
+      <p class="eyebrow">Marshorn Technologies · Research MVP · Pre-seed</p>
       <h1>Prove agent security controls against ground truth.</h1>
       <p class="hero-lede">
-        Gjallar runs attacker and defender agents inside isolated, versioned
-        environments and verifies outcomes with environment-level oracles—not
-        model self-reporting. The Linux baseline is operational; the Windows
-        Active Directory fixture and first public multi-model report are in progress.
+        Marshorn builds Gjallar: attacker and defender agents run inside isolated,
+        versioned labs, and outcomes are verified by environment-level oracles—not
+        by the model saying it succeeded. Linux and Windows Active Directory
+        fixtures are operational internally. The first public multi-model report
+        is still in preparation.
       </p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#contact">Explore a research pilot</a>
-        <a class="btn btn-ghost" href="#evidence">Review current evidence</a>
+        <a class="btn btn-ghost" href="#company">Read the company brief</a>
       </div>
       <dl class="hero-stats">
-        <div><dt>Operational</dt><dd>Linux enterprise-slice baseline</dd></div>
-        <div><dt>In progress</dt><dd>three-node Windows AD fixture</dd></div>
-        <div><dt>Not yet published</dt><dd>cross-model comparative results</dd></div>
+        <div><dt>Stage</dt><dd>Research MVP, not a public SaaS</dd></div>
+        <div><dt>Operational</dt><dd>Linux + frozen Windows AD identity chain</dd></div>
+        <div><dt>Next</dt><dd>Defender visibility and public comparison</dd></div>
       </dl>
     </div>
   </section>
 
-  <section class="section" id="evidence">
+  <section class="section" id="company">
+    <div class="container">
+      <p class="eyebrow">Company</p>
+      <h2>Marshorn Technologies Co., Ltd.</h2>
+      <p class="section-lede">
+        We make AI-agent security claims measurable. Gjallar is our product:
+        a lab that runs adversarial agents, checks the environment itself, and
+        feeds verified gaps toward human-gated governance—not a one-off pentest
+        transcript.
+      </p>
+      <div class="grid grid-3">
+        <div class="card">
+          <p class="card-kicker">The problem</p>
+          <h3>Agents get tools; proof stays anecdotal</h3>
+          <p>
+            Organizations are connecting language models to shells, identity
+            systems, and production APIs. Most “the agent is safe” claims still
+            rest on the model’s own report, a single demo, or a pentest that
+            cannot be replayed when the model or policy changes.
+          </p>
+        </div>
+        <div class="card">
+          <p class="card-kicker">Who we serve</p>
+          <h3>Security, governance, and research teams</h3>
+          <p>
+            Security product teams that ship detection or agent controls;
+            AI platform teams that need a regression test before widening tool
+            access; and research groups that require oracle-confirmed,
+            fixture-versioned evaluation instead of leaderboard screenshots.
+          </p>
+        </div>
+        <div class="card">
+          <p class="card-kicker">Industry</p>
+          <h3>AI security evaluation and agent governance</h3>
+          <p>
+            We sit between autonomous pentesting (finding exploits) and public
+            model benchmarks (ranking capability). The job is: do agent
+            controls still hold under repeatable attacker/defender pressure?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="evidence">
     <div class="container">
       <p class="eyebrow">Evidence status</p>
       <h2>What is verified today—and what is not.</h2>
@@ -69,17 +114,21 @@
       <div class="evidence-panel">
         <div class="evidence-summary">
           <span class="status-badge status-operational">Operational internally</span>
-          <h3>Frozen Linux enterprise-slice baseline</h3>
+          <h3>Frozen Linux and Windows AD lab packages</h3>
           <p>
-            A versioned Linux fixture, ordered chain-of-node objectives,
-            attacker/defender episode execution, independent write-effect
-            checks, snapshots, and replay-oriented artifacts are implemented.
+            Linux enterprise-slice: versioned fixture, ordered chain-of-node
+            objectives, dual-agent episodes, independent write-effect checks,
+            snapshots, and replay-oriented artifacts. Windows AD
+            (<code>enterprise.slice.ad.v1</code>): three isolated QEMU nodes
+            (domain controller, member server, workstation), a five-step
+            identity chain, and a trusted WinRM oracle that does not take
+            attacker stdout as success.
           </p>
         </div>
         <dl class="evidence-facts">
           <div><dt>Public comparison</dt><dd>In preparation</dd></div>
           <div><dt>External validation</dt><dd>Not yet completed</dd></div>
-          <div><dt>Windows AD baseline</dt><dd>Control plane in progress</dd></div>
+          <div><dt>Windows AD fixture</dt><dd>Frozen identity-chain MVP</dd></div>
         </dl>
       </div>
       <div class="grid grid-3 evidence-schema">
@@ -101,13 +150,14 @@
       </div>
       <p class="disclosure">
         <strong>Current disclosure:</strong> no three-model comparison, public
-        preprint, or external pilot result is available yet. Publishing that
-        evidence is the next research milestone.
+        preprint, or external pilot result is available yet. Live Windows runs
+        stay on an isolated, self-hosted lab (no public egress). Publishing
+        comparative evidence remains the next external milestone.
       </p>
     </div>
   </section>
 
-  <section class="section section-alt" id="platform">
+  <section class="section" id="platform">
     <div class="container">
       <p class="eyebrow">The Platform</p>
       <h2>Security evaluation that behaves like a lab, not a demo.</h2>
@@ -151,13 +201,20 @@
 
   <section class="section" id="product">
     <div class="container">
-      <p class="eyebrow">Product model</p>
+      <p class="eyebrow">Product · Research MVP</p>
       <h2>Evaluate → synthesize → govern.</h2>
       <p class="section-lede">
-        The evaluation benchmark is the evidence layer, not the entire
-        business. Gjallar connects reproducible adversarial testing to
-        human-gated policy control at the agent action boundary.
+        Gjallar is in active research-MVP development: the lab and oracles run
+        internally; we do not offer a public hosted service or a GA release.
+        The evaluation benchmark is the evidence layer. Verified misses can
+        become human-gated policy candidates at the agent action boundary.
       </p>
+      <ul class="stage-list">
+        <li><strong>Linux fixture</strong> — operational internally, frozen baseline</li>
+        <li><strong>Windows AD fixture</strong> — research MVP; identity chain and trusted oracle frozen</li>
+        <li><strong>Gjallar Plugin</strong> — separate governance codebase (OpenAI Build Week provenance, not endorsement)</li>
+        <li><strong>Public SaaS / GA</strong> — not offered</li>
+      </ul>
       <div class="product-flow">
         <div class="lineage-item">
           <span class="flow-step">01</span>
@@ -201,6 +258,50 @@
           <p>Selected methodology can remain public while private fixtures, policy integration, and sensitive deployment stay customer-controlled.</p>
         </div>
       </div>
+
+      <h3 class="subsection-title">What ships in the lab today</h3>
+      <div class="grid grid-2" id="capabilities">
+        <div class="card">
+          <p class="card-kicker">Capability</p>
+          <h3>Feature list</h3>
+          <ul class="feature-list">
+            <li>Isolated QEMU topologies with no public network egress</li>
+            <li>Independent attacker and defender agents in one episode</li>
+            <li>Environment oracles: Linux write-effects; Windows identity-chain checks</li>
+            <li>Five-step AD chain: domain auth → share access → service ticket → remote session → directory object control</li>
+            <li>Versioned, hashed fixtures for replay and regression</li>
+            <li>Human-gated policy candidates; nothing auto-promoted to live control</li>
+          </ul>
+        </div>
+        <div class="card">
+          <p class="card-kicker">Expected effect</p>
+          <h3>How an episode is judged</h3>
+          <figure class="arch-figure">
+            <svg viewBox="0 0 520 220" role="img" aria-labelledby="arch-title arch-desc">
+              <title id="arch-title">Gjallar evaluation episode</title>
+              <desc id="arch-desc">Attacker proposes an action; the lab executes it; an independent oracle checks host or directory state; the defender may later observe audit events; the loop records a verified outcome.</desc>
+              <rect x="8" y="80" width="92" height="56" rx="8" fill="#1c2a45" stroke="#4f9dff"/>
+              <text x="54" y="112" text-anchor="middle" fill="#e7ecf7" font-size="12">Attacker</text>
+              <rect x="140" y="80" width="92" height="56" rx="8" fill="#1c2a45" stroke="#4f9dff"/>
+              <text x="186" y="112" text-anchor="middle" fill="#e7ecf7" font-size="12">Lab execute</text>
+              <rect x="272" y="24" width="100" height="56" rx="8" fill="#1c2a45" stroke="#a9f3ce"/>
+              <text x="322" y="56" text-anchor="middle" fill="#e7ecf7" font-size="12">Oracle</text>
+              <rect x="272" y="136" width="100" height="56" rx="8" fill="#1c2a45" stroke="#9aa5bd"/>
+              <text x="322" y="168" text-anchor="middle" fill="#e7ecf7" font-size="12">Defender</text>
+              <rect x="412" y="80" width="100" height="56" rx="8" fill="#1c2a45" stroke="#4f9dff"/>
+              <text x="462" y="112" text-anchor="middle" fill="#e7ecf7" font-size="12">Outcome</text>
+              <path d="M100 108 H132" stroke="#4f9dff" stroke-width="2"/>
+              <path d="M232 100 L272 52" stroke="#a9f3ce" stroke-width="2"/>
+              <path d="M232 116 L272 164" stroke="#9aa5bd" stroke-width="2"/>
+              <path d="M372 52 L412 100" stroke="#a9f3ce" stroke-width="2"/>
+              <path d="M372 164 L412 116" stroke="#9aa5bd" stroke-width="2"/>
+            </svg>
+            <figcaption>
+              Oracle answers “did the goal happen?” Defender (audit/EDR, next research step) answers “would a defender notice?” Attacker stdout is never ground truth.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
       <p class="provenance-note">
         Gjallar Plugin was developed as a project during OpenAI Build Week.
         This describes project provenance, not OpenAI endorsement. The plugin
@@ -218,9 +319,10 @@
           <h3>Isolated QEMU labs</h3>
           <p>
             Multi-VM topologies run under QEMU with no public network egress.
-            The shipped path is a Linux enterprise-slice fixture; the active
-            build path is a three-node Windows AD lab (domain controller,
-            member server, workstation) driven by a WinRM control plane.
+            Two fixtures are packaged: a Linux enterprise-slice baseline, and a
+            three-node Windows AD lab (domain controller, member server,
+            workstation) with a WinRM control plane and an independent trusted
+            oracle. Live AD episodes are confirmation-gated and self-hosted.
           </p>
         </div>
         <div class="tech-item">
@@ -294,17 +396,17 @@
   <section class="section section-alt" id="milestones">
     <div class="container">
       <p class="eyebrow">Next six months</p>
-      <h2>Three milestones that convert the thesis into evidence.</h2>
+      <h2>Turn the frozen labs into comparative and defensive evidence.</h2>
       <ol class="roadmap">
         <li>
           <span class="roadmap-phase">Milestone 01 · Public evidence</span>
           <h3>Release the first multi-model technical report</h3>
-          <p>Evaluate at least three models on the same frozen Linux baseline, repeat each condition, and publish fixture digest, oracle-confirmed chain completion, and run-to-run variance.</p>
+          <p>Evaluate at least three models on a frozen baseline, repeat each condition, and publish fixture digest, oracle-confirmed chain completion, and run-to-run variance.</p>
         </li>
         <li>
-          <span class="roadmap-phase">Milestone 02 · Coverage</span>
-          <h3>Freeze a reproducible Windows AD baseline</h3>
-          <p>Complete domain join, identity-chain actions, ground-truth oracle coverage, snapshot recovery, and repeated validation across the domain controller, member server, and workstation.</p>
+          <span class="roadmap-phase">Milestone 02 · In progress on frozen AD</span>
+          <h3>Turn on defender visibility against the identity chain</h3>
+          <p>The Windows AD fixture and trusted oracle are already frozen. Next is Windows audit (and later richer telemetry) so the defender agent can observe and contain, not only the oracle scoring success.</p>
         </li>
         <li>
           <span class="roadmap-phase">Milestone 03 · External validation</span>
@@ -325,8 +427,9 @@
         </div>
       </div>
       <p class="future-note">
-        <strong>Future research, not a six-month commitment:</strong> AV/EDR
-        telemetry parity and pre-compromise web white-box/black-box evaluation.
+        <strong>Future research, not a six-month commitment:</strong> commercial
+        AV/EDR pressure and pre-compromise web white-box/black-box evaluation.
+        Those are later fixtures, not a substitute for oracle ground truth.
       </p>
     </div>
   </section>
@@ -334,16 +437,28 @@
   <section class="section" id="team">
     <div class="container">
       <p class="eyebrow">Team</p>
-      <h2>Single-founder execution, with a focused expansion plan.</h2>
+      <h2>Founder-led research at Marshorn Technologies.</h2>
       <div class="grid grid-3 team-grid">
         <div class="card team-card">
           <img class="avatar" src="img/IMG_2160.JPG" alt="Scott Fang, Founder of Marshorn Technologies" width="96" height="96" />
           <h3>Scott Fang</h3>
           <p class="team-role">Founder &amp; Lead Researcher</p>
           <p>
-            Marshorn is currently a one-person company. Scott designs the
-            fixture, oracle, and agent architecture, with current research
-            concentrated on post-compromise Windows Active Directory paths.
+            Scott founded Marshorn Technologies Co., Ltd. and leads Gjallar
+            end-to-end: isolated lab fixtures, ground-truth oracles, and the
+            dual-agent evaluation loop. Current work is the post-compromise
+            Windows Active Directory identity chain and how defender visibility
+            should score against that oracle—not model self-reporting.
+          </p>
+          <p>
+            Gjallar Plugin, the companion governance surface, was built as a
+            project during OpenAI Build Week (provenance, not endorsement).
+            Marshorn is a one-person company today.
+          </p>
+          <p class="profile-links">
+            <a href="mailto:scott.fang@marshorn.com">Email</a>
+            <a href="https://github.com/Scottman625" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/scottfang6a6965753951" rel="noopener noreferrer">LinkedIn</a>
           </p>
         </div>
       </div>
@@ -395,7 +510,11 @@
         <p><strong>Legal Entity</strong><br/>Marshorn Technologies Co., Ltd.</p>
         <p><strong>Product</strong><br/>Gjallar — AI-native adversarial security evaluation</p>
         <p><strong>Current offer</strong><br/>Scoped research pilots and design partnerships</p>
-        <p><strong>Stage</strong><br/>Pre-seed, single-founder. Linux baseline operational; public comparison and Windows AD fixture in progress.</p>
+        <p><strong>Stage</strong><br/>Pre-seed research MVP. Linux and Windows AD fixtures operational internally; public comparison not yet published; no hosted SaaS.</p>
+        <p><strong>Profiles</strong><br/>
+          <a href="https://github.com/Scottman625">github.com/Scottman625</a><br/>
+          <a href="https://www.linkedin.com/in/scottfang6a6965753951">LinkedIn</a>
+        </p>
       </div>
     </div>
   </section>
