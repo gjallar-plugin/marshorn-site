@@ -80,12 +80,13 @@ p { margin: 0 0 16px; color: var(--text-muted); }
 .brand:hover { text-decoration: none; }
 
 .brand-logo {
-  height: 40px;
-  width: 40px;
-  object-fit: cover;
-  border-radius: 10px;
+  height: 48px;
+  width: auto;
+  max-width: min(221px, calc(100vw - 160px));
+  object-fit: contain;
+  border-radius: 8px;
   display: block;
-  flex-shrink: 0;
+  flex-shrink: 1;
 }
 
 .nav-links {
