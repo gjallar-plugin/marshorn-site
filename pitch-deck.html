@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gjallar Pitch Deck | Marshorn Technologies</title>
+<style>
+  :root {
+    --bg: #0b0f19;
+    --surface: #131a2b;
+    --border: #232c42;
+    --text: #e7ecf7;
+    --muted: #9aa5bd;
+    --accent: #4f9dff;
+    --good: #a9f3ce;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #05070c; color: var(--text); font-family: "Segoe UI", Inter, sans-serif; }
+  .toolbar {
+    position: sticky; top: 0; z-index: 2;
+    display: flex; gap: 16px; align-items: center; justify-content: space-between;
+    padding: 12px 24px; background: #0b0f19; border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .toolbar a { color: var(--accent); text-decoration: none; }
+  .deck { max-width: 1120px; margin: 0 auto; padding: 24px; }
+  .slide {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    min-height: 640px;
+    padding: 40px 48px 28px;
+    margin: 0 0 28px;
+    page-break-after: always;
+    break-after: page;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .kicker {
+    color: var(--accent); letter-spacing: .12em; text-transform: uppercase;
+    font-size: 12px; font-weight: 700; margin: 0;
+  }
+  h1 { font-size: 36px; line-height: 1.18; margin: 0; font-weight: 650; }
+  h2 { font-size: 28px; line-height: 1.22; margin: 0; font-weight: 650; }
+  p, li { color: var(--muted); font-size: 16px; line-height: 1.45; margin: 0; }
+  .lede { font-size: 19px; max-width: none; }
+  .fill { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; }
+  .grid { display: grid; gap: 16px; flex: 1; align-items: stretch; }
+  .g2 { grid-template-columns: 1fr 1fr; }
+  .g3 { grid-template-columns: 1fr 1fr 1fr; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+  .card h3 { margin: 0; font-size: 17px; color: var(--text); }
+  .card p, .card ul { margin: 0; font-size: 15px; }
+  .card ul { padding-left: 1.1em; }
+  .card li { font-size: 15px; margin: 0 0 6px; }
+  .card li:last-child { margin: 0; }
+  .focus { border-color: var(--accent); }
+  .foot {
+    margin: 0;
+    padding-top: 8px;
+    color: var(--muted);
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .chain {
+    font-family: ui-monospace, Consolas, monospace;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .diagram { flex: 1; display: flex; align-items: center; }
+  .diagram svg { width: 100%; height: 100%; max-height: 280px; }
+  .note { font-size: 15px; }
+  @media print {
+    .toolbar { display: none !important; }
+    html, body { background: var(--bg); }
+    .deck { max-width: none; padding: 0; margin: 0; }
+    .slide {
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      width: 13.333in;
+      height: 7.5in;
+      min-height: 7.5in;
+      max-height: 7.5in;
+      padding: 0.42in 0.55in 0.32in;
+      gap: 14px;
+    }
+  }
+  @page { size: 13.333in 7.5in; margin: 0; }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <span>Gjallar · Marshorn Technologies · Pitch deck</span>
+  <span><a href="index.html">Site</a> · Print / Save as PDF (landscape, backgrounds on)</span>
+</div>
+<div class="deck">
+
+<section class="slide">
+  <p class="kicker">01 · Marshorn Technologies</p>
+  <h1>Gjallar proves agent security against ground truth—not the model’s word.</h1>
+  <p class="lede">Attacker and defender agents run in isolated, versioned labs. Independent oracles check the environment. The same fixture can be replayed.</p>
+  <div class="fill">
+    <div class="grid g3">
+      <div class="card"><h3>Lab</h3><p>Isolated QEMU. No public egress. Linux + Windows AD.</p></div>
+      <div class="card"><h3>Oracle</h3><p>Environment state is ground truth. Attacker stdout is not.</p></div>
+      <div class="card"><h3>Replay</h3><p>Frozen hashes. Same starting state across models and runs.</p></div>
+    </div>
+  </div>
+  <p class="foot"><span>Research MVP · Pre-seed</span><span>marshorn.com</span></p>
+</section>
+
+<section class="slide">
+  <p class="kicker">02 · Problem</p>
+  <h2>Agent security is almost impossible to verify.</h2>
+  <div class="fill">
+    <div class="grid g3">
+      <div class="card">
+        <h3>Self-report</h3>
+        <p>The model says it succeeded. That is not evidence. Tool-using agents can claim a compromise the host never shows.</p>
+      </div>
+      <div class="card">
+        <h3>One-off tests</h3>
+        <p>A demo or pentest cannot be rerun when the model, prompt, or policy changes. No fixture digest, no regression.</p>
+      </div>
+      <div class="card">
+        <h3>Wrong layer</h3>
+        <p>Scanners find bugs. Leaderboards rank models. Neither asks whether your agent controls still hold under pressure.</p>
+      </div>
+    </div>
+  </div>
+  <p class="foot"><span>Organizations are giving agents shells, identity, and APIs.</span><span>02 / 10</span></p>
+</section>
+
+<section class="slide">
+  <p class="kicker">03 · Solution</p>
+  <h2>Gjallar: oracle-verified, replayable adversarial evaluation.</h2>
+  <div class="fill">
+    <div class="grid g3">
+      <div class="card">
+        <h3>Isolated lab</h3>
+        <ul>
+          <li>QEMU topologies, no public egress</li>
+          <li>Linux enterprise-slice</li>
+          <li>Three-node Windows AD</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Independent oracle</h3>
+        <ul>
+          <li>Ticket, share, directory object</li>
+          <li>Checked out-of-band</li>
+          <li>Never trust attacker stdout</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Replay</h3>
+        <ul>
+          <li>Frozen, hashed baselines</li>
+          <li>Same digest, same start</li>
+          <li>Comparable multi-model runs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="foot"><span>Evaluate in the lab → draft policy candidates → human-gated governance.</span><span>03 / 10</span></p>
+</section>
+
+<section class="slide">
+  <p class="kicker">04 · How it works</p>
+  <h2>Two questions, two observers.</h2>
+  <div class="fill diagram">
+    <svg viewBox="0 0 900 220" role="img">
+      <rect x="20" y="78" width="140" height="64" rx="10" fill="#131a2b" stroke="#4f9dff"/>
+      <text x="90" y="116" text-anchor="middle" fill="#e7ecf7" font-size="18">Attacker</text>
+      <rect x="210" y="78" width="150" height="64" rx="10" fill="#131a2b" stroke="#4f9dff"/>
+      <text x="285" y="116" text-anchor="middle" fill="#e7ecf7" font-size="18">Lab execute</text>
+      <rect x="420" y="12" width="150" height="64" rx="10" fill="#131a2b" stroke="#a9f3ce"/>
+      <text x="495" y="50" text-anchor="middle" fill="#e7ecf7" font-size="18">Oracle</text>
+      <rect x="420" y="144" width="150" height="64" rx="10" fill="#131a2b" stroke="#9aa5bd"/>
+      <text x="495" y="182" text-anchor="middle" fill="#e7ecf7" font-size="18">Defender</text>
+      <rect x="680" y="78" width="150" height="64" rx="10" fill="#131a2b" stroke="#4f9dff"/>
+      <text x="755" y="116" text-anchor="middle" fill="#e7ecf7" font-size="18">Outcome</text>
+      <path d="M160 110 H210" stroke="#4f9dff" stroke-width="2"/>
+      <path d="M360 98 L420 44" stroke="#a9f3ce" stroke-width="2"/>
+      <path d="M360 122 L420 176" stroke="#9aa5bd" stroke-width="2"/>
+      <path d="M570 44 L680 98" stroke="#a9f3ce" stroke-width="2"/>
+      <path d="M570 176 L680 122" stroke="#9aa5bd" stroke-width="2"/>
+    </svg>
+  </div>
+  <div class="grid g2">
+    <div class="card"><h3>Oracle</h3><p>Did the goal happen? Identity chain, files, tickets—measured on the host or DC.</p></div>
+    <div class="card"><h3>Defender</h3><p>Would a defender notice? Audit/EDR next. A single event is not proof of malice.</p></div>
+  </div>
+  <p class="foot"><span>Identity-chain control plane today: lab WinRM into the foothold VM. Not a Beacon.</span><span>04 / 10</span></p>
+</section>
+
+<section class="slide">
+  <p class="kicker">05 · Product in the lab</p>
+  <h2>Linux baseline + three-node Windows AD.</h2>
+  <p class="chain">domain auth → member share → service ticket → remote session → AD object control</p>
+  <div class="fill">
+    <div class="grid g3">
+      <div class="card"><h3>Roles</h3><p>Domain controller, member server, workstation. Isolated corp net. No egress.</p></div>
+      <div class="card"><h3>“Working” means</h3><p>The oracle sees environment state. A probe printing OK is not enough. CI stays stub/offline.</p></div>
+      <div class="card"><h3>What we publish here</h3><p>Architecture and chain contract. Guest desktop shots stay off this public deck.</p></div>
+    </div>
+  </div>
+  <p class="foot"><span>Trusted oracle uses a separate management channel from the attacker session.</span><span>05 / 10</span></p>
+</section>
+
+<section class="slide">
+  <p class="kicker">06 · Differentiation</p>
+  <h2>A different job from pentest and benchmarks.</h2>
+  <div class="fill">
+    <div class="grid g3">
+      <div class="card">
+        <h3>Autonomous pentesting</h3>
+        <p>Find exploitable paths. Operational discovery is the product. Gjallar does not claim broader coverage.</p>
+      </div>
+      <div class="card">
+        <h3>Capability benchmarks</h3>
+        <p>Rank models on standardized tasks. Failures rarely return to an operational control surface.</p>
+      </div>
+      <div class="card focus">
+        <h3>Gjallar</h3>
+        <p>Same frozen lab. Oracle-verified outcome. Improve the governance boundary under repeatable pressure.</p>
+      </div>
+    </div>
+  </div>
+  <p class="foot"><span>Moat thesis: mapping replayable failures to human-gated policy—not a fixture file alone.</span><span>06 / 10</span></p>
+</section>
+
+<section class="slide">
+  <p class="kicker">07 · Market</p>
+  <h2>Who buys a verifiable agent-security lab.</h2>
+  <div class="fill">
+    <div class="grid g3">
+      <div class="card">
+        <h3>Security product teams</h3>
+        <p>Regression-test detection or agent controls before a release. Same fixture after a model or rule change.</p>
+      </div>
+      <div class="card">
+        <h3>AI platform / governance</h3>
+        <p>Widen tool access only after the same lab still holds. Human-gated promotion, not auto-enable.</p>
+      </div>
+      <div class="card">
+        <h3>Research labs</h3>
+        <p>Compare models on oracle-confirmed chains, with repeats—not a single lucky run.</p>
+      </div>
+    </div>
+  </div>
+  <p class="foot"><span>Offer today: scoped research pilots. Not a public SaaS.</span><span>07 / 10</span></p>
+</section>
+
+<section class="slide">
+  <p class="kicker">08 · Traction &amp; milestones</p>
+  <h2>Labs are frozen. Public comparison is next.</h2>
+  <div class="fill">
+    <div class="grid g3">
+      <div class="card">
+        <h3>Now</h3>
+        <p>Linux enterprise-slice operational. Windows AD identity chain and trusted oracle frozen as a research MVP.</p>
+      </div>
+      <div class="card">
+        <h3>Next</h3>
+        <p>First multi-model report on a frozen baseline. Defender visibility via Windows audit on the AD chain.</p>
+      </div>
+      <div class="card">
+        <h3>Then</h3>
+        <p>One design partner. Richer telemetry / EDR only on a later fixture—after the measuring stick works.</p>
+      </div>
+    </div>
+  </div>
+  <p class="foot"><span>No public three-model numbers yet. We will not invent them for this deck.</span><span>08 / 10</span></p>
+</section>
+
+<section class="slide">
+  <p class="kicker">09 · Team</p>
+  <h2>Marshorn Technologies Co., Ltd.</h2>
+  <div class="fill">
+    <div class="grid g2">
+      <div class="card">
+        <h3>Scott Fang</h3>
+        <p>Founder &amp; Lead Researcher. Lab fixtures, oracles, and the dual-agent loop. Current focus: post-compromise Windows AD evaluation.</p>
+        <p>GitHub Scottman625 · scott.fang@marshorn.com</p>
+      </div>
+      <div class="card">
+        <h3>Miranda</h3>
+        <p>Collaborator on Marshorn / Gjallar. Public title and profile to be listed as they are published.</p>
+      </div>
+    </div>
+  </div>
+  <p class="foot"><span>marshorn.com</span><span>09 / 10</span></p>
+</section>
+
+<section class="slide">
+  <p class="kicker">10 · NVIDIA / GPU</p>
+  <h2>GPUs for repeatable agent evaluation—not training a foundation model.</h2>
+  <div class="fill">
+    <div class="grid g2">
+      <div class="card">
+        <h3>What we will run</h3>
+        <p>Batch LLM attacker/defender episodes on frozen fixtures. Parallel inference, not pretraining. Compare models on the same AD and Linux baselines.</p>
+      </div>
+      <div class="card">
+        <h3>What we need</h3>
+        <p>Cloud GPU (e.g. L4/A10) and API inference credits so multi-model replay is not gated by one workstation. Local NVIDIA GPU only after utilization justifies it. AD guests stay CPU/virtualization-bound.</p>
+      </div>
+    </div>
+  </div>
+  <p class="foot"><span>Ask: Inception access + compute so the next milestone is evidence, not hardware luck.</span><span>10 / 10</span></p>
+</section>
+
+</div>
+</body>
+</html>

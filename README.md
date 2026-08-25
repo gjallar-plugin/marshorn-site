@@ -12,6 +12,10 @@ copyright line) — similar to "Gemini, by Google."
 **Production domain:** `https://marshorn.com` (also `https://www.marshorn.com`
 once DNS is configured).
 
+**Pitch deck:** `pitch-deck.html` (10 landscape slides). Open it and use
+Print → Save as PDF (layout: landscape, margins: none, backgrounds: on).
+A generated `Gjallar-Pitch-Deck.pdf` may also be in this folder for uploads.
+
 ## Before you deploy — customize these
 
 1. **Legal entity name** — currently "Marshorn Technologies Co., Ltd."

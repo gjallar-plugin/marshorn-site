@@ -465,7 +465,20 @@ code {
   font-weight: 600;
   font-size: 0.9rem;
 }
-.team-card { max-width: 520px; }
+.team-card { max-width: none; }
+.avatar-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 2rem;
+  font-weight: 700;
+}
+.fine-print {
+  margin-top: 28px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
 .avatar {
   width: 96px;
   height: 96px;
