@@ -1,8 +1,8 @@
 # Gjallar — Static Website (Marshorn Technologies Co., Ltd.)
 
 A dependency-free static website (`index.html` + `styles.css` + `script.js`,
-no build step) intended for startup-program applications (NVIDIA Inception,
-Google for Startups, etc.) that require "a working website."
+no build step) intended for startup-program applications that require
+"a working website."
 
 **Naming convention used on this site:** `Gjallar` is the product/project
 name (unchanged); `Marshorn Technologies Co., Ltd.` is the legal entity
