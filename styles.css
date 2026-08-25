@@ -80,8 +80,10 @@ p { margin: 0 0 16px; color: var(--text-muted); }
 .brand:hover { text-decoration: none; }
 
 .brand-logo {
-  height: 44px;
-  width: auto;
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 10px;
   display: block;
   flex-shrink: 0;
 }
