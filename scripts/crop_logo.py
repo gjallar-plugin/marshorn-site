@@ -41,48 +41,31 @@ def square_around(box: tuple[int, int, int, int], size: tuple[int, int]) -> tupl
     return max(0, sx0), max(0, sy0), min(w, sx1), min(h, sy1)
 
 
-def scale_to_height(im: Image.Image, height: int) -> Image.Image:
-    width = max(1, round(im.width * height / im.height))
-    return im.resize((width, height), Image.Resampling.LANCZOS)
-
-
 def main() -> None:
     im = Image.open(SRC).convert("RGB")
     arr = np.asarray(im)
     lum = arr.mean(axis=2)
     bright = lum > 80
 
+    # Stacked lockup: ram above MARSHORN, with margin like the brand sheet.
+    x0, y0, x1, y1 = bbox(bright)
+    lockup = (
+        max(0, x0 - 68),
+        max(0, y0 - 81),
+        min(im.width, x1 + 68),
+        min(im.height, y1 + 81),
+    )
+    lockup_im = im.crop(lockup)
+    lockup_im.save(ROOT / "company_logo_web.png", optimize=True)
+
     icon_mask = bright.copy()
     icon_mask[401:] = False
-    word_mask = bright.copy()
-    word_mask[:430] = False
-
-    icon_box = pad(bbox(icon_mask), 14, im.size)
-    word_box = pad(bbox(word_mask), 8, im.size)
     mark = square_around(pad(bbox(icon_mask), 12, im.size), im.size)
-
-    icon_im = im.crop(icon_box)
-    word_im = im.crop(word_box)
     mark_im = im.crop(mark)
-
-    # Horizontal header lockup: ram + MARSHORN, 2x a 48px nav mark.
-    canvas_h = 96
-    pad_x, pad_y, gap = 12, 10, 14
-    icon_h = canvas_h - 2 * pad_y
-    word_h = 44
-    icon_s = scale_to_height(icon_im, icon_h)
-    word_s = scale_to_height(word_im, word_h)
-    canvas_w = pad_x + icon_s.width + gap + word_s.width + pad_x
-    bg = tuple(int(x) for x in arr[40, 40])
-    lockup = Image.new("RGB", (canvas_w, canvas_h), bg)
-    lockup.paste(icon_s, (pad_x, pad_y))
-    lockup.paste(word_s, (pad_x + icon_s.width + gap, (canvas_h - word_s.height) // 2))
-    lockup.save(ROOT / "company_logo_web.png", optimize=True)
-
     mark_im.resize((128, 128), Image.Resampling.LANCZOS).save(ROOT / "company_mark.png", optimize=True)
     mark_im.resize((64, 64), Image.Resampling.LANCZOS).save(ROOT / "favicon.png", optimize=True)
-    print("header lockup", lockup.size)
-    print("icon", icon_box, "word", word_box, "mark", mark)
+    print("lockup", lockup, "->", lockup_im.size)
+    print("mark", mark)
 
 
 if __name__ == "__main__":
