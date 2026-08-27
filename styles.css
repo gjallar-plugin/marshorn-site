@@ -477,6 +477,11 @@ code {
   border: 2px solid rgba(79, 157, 255, 0.35);
   background: var(--surface-border);
 }
+.miranda-avatar {
+  object-fit: contain;
+  object-position: center;
+  background: #fff;
+}
 .team-role {
   color: var(--accent);
   font-size: 0.85rem;
